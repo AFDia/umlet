@@ -24,8 +24,7 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn clean install -P checks
-    - run: mkdir staging && cp umlet-standalone/target/*.zip staging
     - uses: actions/upload-artifact@v2
       with:
-        name: Package
-        path: staging
+        name: my-artifact
+        path: umlet-*/target/*.zip
